@@ -26,62 +26,36 @@
 Kurz beschreiben, welches Problem adressiert wird und welches Ergebnis angestrebt ist.
 
 - **Kontext & Problem:** _[1–3 Sätze]_  
-Viele Menschen finden Rechnungen/Belege nicht mehr oder wissen nicht, wann die Garantie eines Produkts abläuft. Dadurch werden Garantieansprüche verpasst und wichtige Produktinformationen sind verstreut statt zentral verfügbar.
+
 
 - **Ziele:** _[stichwortartig oder 2–4 Sätze]_  
-Mit „Warranty Vault“ können Nutzende Produkte mit Kaufdatum, Händler und Garantiefrist erfassen. Die App berechnet automatisch das Garantie-Enddatum und zeigt den Status (aktiv / läuft bald ab / abgelaufen) übersichtlich an.
+
 
 - **Abgrenzung [Optional]:** _Was gehört explizit nicht zum Umfang?_
-Keine rechtliche Beratung zu Garantieansprüchen, keine automatische Belegerkennung (OCR) im Mindestumfang, keine komplexe Benutzerverwaltung (z.B. Rollen/Mehrbenutzer) im MVP.
+
 
 ## 2. Zielgruppe & Stakeholder
 Wem nützt die Lösung, wer ist beteiligt oder betroffen?
 
 - **Primäre Zielgruppe:** _[kurz beschreiben]_ 
-Privatpersonen (z.B. Studierende, Berufstätige), die mehrere Produkte besitzen und Garantiefristen sowie Belege einfach und übersichtlich verwalten möchten.
+
 
 - **Weitere Stakeholder [Optional]:** _[z. B. Verwaltung, Geschäftsleitung]_  
-Haushaltsmitglieder (gemeinsame Geräte/Produkte), Service-/Supportstellen (indirekt betroffen, da Belege schneller verfügbar sind).
+
 
 - **Annahmen [Optional]:** _[welche Hypothesen werden geprüft?]_
-Nutzende möchten eine einfache Übersicht über Garantiefristen und Kaufdaten.
 
-Eine Warnung „läuft bald ab“ erhöht die Wahrscheinlichkeit, dass Garantie rechtzeitig genutzt wird.
-
-Ein schneller Erfassungsprozess ist wichtiger als sehr viele Detailfelder.
 
 ## 3. Anforderungen & Umfang
 Beschreibt den verbindlichen Umfang gemäss Übungen und allfällige Erweiterungen.
 - **Kernfunktionalität (Mindestumfang):** _gemäss Übungen ab Semesterwoche 8; Workflows kurz nennen und optional illustrieren_  
-Hauptworkflow: „Produkt verwalten“
 
-Produkt erfassen (Formular)
-
-Produkte in einer Übersicht anzeigen (Daten aus MongoDB)
-
-Produkt-Detail öffnen und Produkt bearbeiten/löschen
-
-Garantie-Enddatum automatisch berechnen und Status anzeigen
-
-Optional: Beleg-Link speichern
 
 - **Akzeptanzkriterien:** _[z. B. „Nutzende können Workflow X von Start bis Abschluss ohne Fehlermeldung durchführen.“]_  
-Nutzende können ein Produkt mit Pflichtfeldern (Name, Kaufdatum, Garantiefrist) erstellen und es erscheint ohne Fehlermeldung in der Übersicht.
 
-Die Daten bleiben nach Reload erhalten (MongoDB Persistenz).
-
-Garantie-Enddatum und Status werden korrekt angezeigt (aktiv / läuft bald ab / abgelaufen).
-
-Nutzende können ein Produkt bearbeiten; Änderungen sind sofort sichtbar und bleiben nach Reload erhalten.
-
-Nutzende können ein Produkt löschen; es verschwindet aus der Übersicht.
 
 - **Erweiterungen [Optional]:** _[Liste zusätzlicher Funktionen/Qualitätssprünge, falls umgesetzt]_  
-Upload von Belegen (PDF/JPG)
 
-Filter/Sortierung (Status, Kategorie, Ablaufdatum)
-
-Stats/Charts (z.B. Anzahl bald ablaufender Garantien, Ausgaben pro Kategorie)
 
 ## 4. Vorgehen & Artefakte
 Die Durchführung erfolgt phasenbasiert; dokumentieren Sie die wichtigsten Ergebnisse je Phase.
