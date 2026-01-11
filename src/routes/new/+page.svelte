@@ -39,7 +39,13 @@
       <div class="grid2">
         <div class="field">
           <label for="purchaseDate">Kaufdatum</label>
-          <input id="purchaseDate" type="date" name="purchaseDate" value={form?.values?.purchaseDate ?? ""} />
+          <input
+            id="purchaseDate"
+            type="date"
+            name="purchaseDate"
+            max={new Date().toISOString().slice(0, 10)}
+            value={form?.values?.purchaseDate ?? ""}
+          />
           {#if form?.errors?.purchaseDate}<div class="error">{form.errors.purchaseDate}</div>{/if}
         </div>
 
@@ -50,6 +56,7 @@
             type="number"
             name="warrantyMonths"
             min="1"
+            max="120"
             placeholder="z.B. 24"
             value={form?.values?.warrantyMonths ?? "24"}
           />
