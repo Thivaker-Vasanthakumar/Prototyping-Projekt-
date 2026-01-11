@@ -6,7 +6,7 @@
   <div class="topbar">
     <div>
       <h1 style="margin:0;">Neues Produkt</h1>
-      <p style="margin:6px 0 0; color:#6b7280;">Erfasse Kaufdatum und Garantiedauer.</p>
+      <p style="margin:6px 0 0; color:#6b7280;">Erfasse Kaufdatum, Garantiedauer und optional den Beleg-Link.</p>
     </div>
     <a href="/"><button type="button" class="ghost">Zur Übersicht</button></a>
   </div>
@@ -25,15 +25,21 @@
         {#if form?.errors?.retailer}<div class="error">{form.errors.retailer}</div>{/if}
       </div>
 
+      <div class="field">
+        <label for="receiptUrl">Beleg-Link (optional)</label>
+        <input
+          id="receiptUrl"
+          name="receiptUrl"
+          placeholder="https://drive.google.com/..."
+          value={form?.values?.receiptUrl ?? ""}
+        />
+        {#if form?.errors?.receiptUrl}<div class="error">{form.errors.receiptUrl}</div>{/if}
+      </div>
+
       <div class="grid2">
         <div class="field">
           <label for="purchaseDate">Kaufdatum</label>
-          <input
-            id="purchaseDate"
-            type="date"
-            name="purchaseDate"
-            value={form?.values?.purchaseDate ?? ""}
-          />
+          <input id="purchaseDate" type="date" name="purchaseDate" value={form?.values?.purchaseDate ?? ""} />
           {#if form?.errors?.purchaseDate}<div class="error">{form.errors.purchaseDate}</div>{/if}
         </div>
 
@@ -60,78 +66,17 @@
 </div>
 
 <style>
-  .container {
-    max-width: 640px;
-    margin: 32px auto;
-    padding: 0 16px;
-  }
-
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 6px 24px rgba(17, 24, 39, 0.06);
-  }
-
-  .form {
-    display: grid;
-    gap: 14px;
-  }
-
-  .field {
-    display: grid;
-    gap: 6px;
-  }
-
-  label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #374151;
-  }
-
-  .grid2 {
-    display: grid;
-    gap: 14px;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: 560px) {
-    .grid2 {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .actions {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-top: 6px;
-  }
-
-  .link {
-    color: #6b7280;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .link:hover {
-    text-decoration: underline;
-  }
-
-  .error {
-    color: #b91c1c;
-    font-size: 12px;
-  }
-
-  .ghost {
-    background: white;
-  }
+  .container { max-width: 640px; margin: 32px auto; padding: 0 16px; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+  .card { background:white; border:1px solid #e5e7eb; border-radius:16px; padding:16px; box-shadow: 0 6px 24px rgba(17,24,39,0.06); }
+  .form { display:grid; gap:14px; }
+  .field { display:grid; gap:6px; }
+  label { font-size:13px; font-weight:600; color:#374151; }
+  .grid2 { display:grid; gap:14px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 560px){ .grid2 { grid-template-columns: 1fr; } }
+  .actions { display:flex; gap:10px; align-items:center; margin-top:6px; }
+  .link { color:#6b7280; text-decoration:none; font-weight:600; }
+  .link:hover { text-decoration:underline; }
+  .error { color:#b91c1c; font-size:12px; }
+  .ghost { background:white; }
 </style>

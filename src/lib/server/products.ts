@@ -6,6 +6,7 @@ export type ProductInput = {
   retailer: string;
   purchaseDate: string;   // YYYY-MM-DD
   warrantyMonths: number; // e.g. 24
+  receiptUrl?: string;    // optional
 };
 
 export async function listProducts() {

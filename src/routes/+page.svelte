@@ -111,7 +111,8 @@
           <tbody>
             {#each sorted as p}
               <tr>
-                <td class="strong">{p.name}</td>
+                <td class="strong"><a href={`/product/${p._id}`}>{p.name}</a></td>
+
                 <td>{p.retailer}</td>
                 <td>{p.purchaseDate}</td>
                 <td>{p.info.endISO}</td>
