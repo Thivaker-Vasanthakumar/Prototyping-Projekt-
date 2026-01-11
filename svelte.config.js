@@ -1,8 +1,9 @@
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-export default {
+const config = {
   preprocess: vitePreprocess(),
+
   kit: {
     adapter: adapter({
       edge: false,
@@ -10,3 +11,5 @@ export default {
     })
   }
 };
+
+export default config;
