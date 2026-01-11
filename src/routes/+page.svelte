@@ -355,4 +355,14 @@
     margin-top: 14px;
     align-items: center;
   }
+  
+.filters select{
+  line-height: 1.2;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+
+
 </style>
